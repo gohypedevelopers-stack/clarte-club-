@@ -19,7 +19,7 @@ export default function ProductGrid({ title, products }: ProductGridProps) {
   return (
     <section className="pt-6 pb-10 px-6 md:px-12 2xl:px-24 w-full mx-auto">
       <h2 className="text-2xl font-light uppercase tracking-[0.2em] mb-6 text-center text-brand-black">{title}</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mb-10">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-10">
         {products.map((product, idx) => (
           <div key={idx} className="group cursor-pointer flex flex-col">
             <div className="relative aspect-[4/5] bg-[#F2EEEA] border border-brand-taupe/20 mb-4 flex items-center justify-center overflow-hidden">

@@ -6,9 +6,9 @@ export default function Footer() {
   return (
     <footer className="bg-brand-black text-brand-cream pt-16 pb-8 border-t border-brand-taupe/20">
       <div className="w-full px-6 md:px-12 2xl:px-24 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+        <div className="grid grid-cols-3 md:grid-cols-12 gap-8 mb-12">
           
-          <div className="md:col-span-3">
+          <div className="col-span-full md:col-span-3">
             <Link href="/" className="block w-36 md:w-44 -ml-4 -mt-10 -mb-6 hover:opacity-80 transition-opacity">
               <Image
                 src="/images/logo/cartellogo.png"
@@ -24,7 +24,7 @@ export default function Footer() {
             </p>
           </div>
           
-          <div className="md:col-span-2">
+          <div className="col-span-1 md:col-span-2">
             <h4 className="font-bold text-sm uppercase mb-4 tracking-wider">Company</h4>
             <ul className="space-y-3 text-xs text-brand-taupe">
               <li><Link href="#" className="hover:text-brand-gold transition-colors">About Us</Link></li>
@@ -33,7 +33,7 @@ export default function Footer() {
             </ul>
           </div>
           
-          <div className="md:col-span-2">
+          <div className="col-span-1 md:col-span-2">
             <h4 className="font-bold text-sm uppercase mb-4 tracking-wider">Support</h4>
             <ul className="space-y-3 text-xs text-brand-taupe">
               <li><Link href="#" className="hover:text-brand-gold transition-colors">Contact</Link></li>
@@ -42,7 +42,7 @@ export default function Footer() {
             </ul>
           </div>
           
-          <div className="md:col-span-2">
+          <div className="col-span-1 md:col-span-2">
             <h4 className="font-bold text-sm uppercase mb-4 tracking-wider">Legal</h4>
             <ul className="space-y-3 text-xs text-brand-taupe">
               <li><Link href="#" className="hover:text-brand-gold transition-colors">Privacy Policy</Link></li>
@@ -51,7 +51,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="col-span-full md:col-span-3">
             <h4 className="font-bold text-sm uppercase mb-4 tracking-wider">Subscribe to the Vision</h4>
             <form className="flex flex-col space-y-2">
               <input 
