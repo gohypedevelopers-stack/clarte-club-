@@ -68,7 +68,7 @@ export default function FeaturedCollections() {
 
   return (
     <section className="py-10 px-6 md:px-12 2xl:px-24 w-full mx-auto overflow-hidden">
-      <h2 className="text-2xl font-light uppercase tracking-[0.2em] mb-8 text-center text-brand-black">Featured Collections</h2>
+      <h2 className="text-base sm:text-xl md:text-2xl font-light uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-8 text-center text-brand-black">Featured Collections</h2>
       <div 
         ref={scrollRef}
         onScroll={handleScroll}
@@ -86,7 +86,7 @@ export default function FeaturedCollections() {
             <div className="absolute bottom-0 left-0 p-8 text-brand-cream w-full">
               <h3 className="text-xl font-light tracking-wide uppercase mb-1">{item.title}</h3>
               <p className="text-xs text-brand-cream/80 mb-5 tracking-wide font-light">{item.subtitle}</p>
-              <button className="bg-transparent border border-brand-cream hover:bg-brand-cream hover:text-brand-black text-brand-cream px-6 py-3 text-xs font-bold transition-colors uppercase tracking-[0.15em] cursor-pointer">
+              <button className="bg-transparent border border-brand-cream hover:bg-brand-cream hover:text-brand-black text-brand-cream px-4 py-2 md:px-6 md:py-3 text-[10px] md:text-xs font-bold transition-colors uppercase tracking-[0.12em] md:tracking-[0.15em] cursor-pointer">
                 Explore Now
               </button>
             </div>
