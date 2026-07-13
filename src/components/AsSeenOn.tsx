@@ -34,7 +34,7 @@ export default function AsSeenOn() {
   return (
     <section className="bg-brand-black py-10 overflow-hidden">
       <div className="w-full px-6 md:px-12 2xl:px-24 mx-auto text-center mb-10">
-        <h2 className="text-2xl font-light uppercase tracking-[0.2em] text-brand-cream">As Seen On</h2>
+        <h2 className="text-base sm:text-xl md:text-2xl font-light uppercase tracking-[0.15em] sm:tracking-[0.2em] text-brand-cream">As Seen On</h2>
       </div>
       <div className="w-full relative">
         <div className="flex w-max animate-marquee space-x-4 px-4">
