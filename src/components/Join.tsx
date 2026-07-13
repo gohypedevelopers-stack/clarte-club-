@@ -28,7 +28,7 @@ export default function Join() {
               placeholder="Email Address" 
               className="flex-1 bg-transparent border-b border-brand-black px-4 py-3 text-brand-black placeholder-brand-taupe/50 focus:outline-none focus:border-brand-gold transition-colors text-sm"
             />
-            <button type="submit" className="bg-brand-black text-brand-cream px-10 py-3 text-xs font-bold tracking-[0.2em] uppercase hover:bg-brand-gold transition-colors">
+            <button type="submit" className="bg-brand-black text-brand-cream px-6 py-2.5 sm:px-10 sm:py-3 text-[10px] sm:text-xs font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase hover:bg-brand-gold transition-colors">
               Join
             </button>
           </form>
