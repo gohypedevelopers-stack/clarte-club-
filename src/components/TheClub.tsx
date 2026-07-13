@@ -77,7 +77,7 @@ export default function TheClub() {
         <p className="relative z-10 text-brand-taupe text-sm md:text-base lg:text-lg xl:text-xl mb-6 md:mb-8 max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto font-light leading-relaxed">
           What belonging means, and a way in.
         </p>
-        <button className="relative z-10 px-6 md:px-8 py-2.5 md:py-3.5 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-colors text-xs font-bold tracking-[0.2em] uppercase cursor-pointer">
+        <button className="relative z-10 px-5 md:px-8 py-2 md:py-3.5 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-black transition-colors text-[10px] md:text-xs font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase cursor-pointer">
           Enter The Club
         </button>
       </div>

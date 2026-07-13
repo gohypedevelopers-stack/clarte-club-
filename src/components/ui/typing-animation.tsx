@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-
 import { cn } from "@/lib/utils";
 
 interface TypingAnimationProps {
@@ -55,26 +54,43 @@ export function TypingAnimation({
     };
   }, [duration, i, text, inView]);
 
-  // We add custom bolding logic for the specific use case,
-  // while keeping the component signature intact.
   const renderText = (str: string) => {
-    if (str.includes("are seen.")) {
-      const parts = str.split("are seen.");
-      return <>{parts[0]}<span className="font-bold">are seen.</span>{parts[1]}</>;
+    // Check if the string belongs to "Some people are seen."
+    if (text.startsWith("Some people")) {
+      const splitWord = "are ";
+      if (str.includes(splitWord)) {
+        const idx = str.indexOf(splitWord);
+        const first = str.substring(0, idx);
+        const second = str.substring(idx);
+        return (
+          <>
+            <span className="font-normal">{first}</span>
+            <span className="italic font-light">{second}</span>
+          </>
+        );
+      } else {
+        return <span className="font-normal">{str}</span>;
+      }
     }
-    if (str.includes("are remembered.")) {
-      const parts = str.split("are remembered.");
-      return <>{parts[0]}<span className="font-bold">are remembered.</span>{parts[1]}</>;
+
+    // Check if the string belongs to "Others are remembered."
+    if (text.startsWith("Others")) {
+      const splitWord = "are ";
+      if (str.includes(splitWord)) {
+        const idx = str.indexOf(splitWord);
+        const first = str.substring(0, idx);
+        const second = str.substring(idx);
+        return (
+          <>
+            <span className="font-normal">{first}</span>
+            <span className="italic font-light">{second}</span>
+          </>
+        );
+      } else {
+        return <span className="font-normal">{str}</span>;
+      }
     }
-    // Handle partial typing of bold words
-    if (str.includes("are s")) {
-      const idx = str.indexOf("are s");
-      return <>{str.substring(0, idx)}<span className="font-bold">{str.substring(idx)}</span></>;
-    }
-    if (str.includes("are r")) {
-      const idx = str.indexOf("are r");
-      return <>{str.substring(0, idx)}<span className="font-bold">{str.substring(idx)}</span></>;
-    }
+
     return str;
   };
 
@@ -82,7 +98,7 @@ export function TypingAnimation({
     <Component
       ref={ref as any}
       className={cn(
-        "font-display text-center text-4xl font-bold leading-[5rem] tracking-[-0.02em] drop-shadow-sm",
+        "font-display text-center text-4xl leading-[5rem] tracking-[-0.02em] drop-shadow-sm",
         className,
       )}
     >

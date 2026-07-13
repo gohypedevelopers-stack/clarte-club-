@@ -24,7 +24,7 @@ const wornByYouProducts = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-brand-cream">
+    <main className="min-h-screen bg-brand-cream relative">
       <Header />
       <Hero />
       <ProductGrid title="Latest Drop" products={latestProducts} />

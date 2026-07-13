@@ -9,12 +9,12 @@ export default function Statement() {
         <div className="flex flex-row items-center justify-between w-full gap-2 md:gap-8 lg:gap-16">
           
           {/* Left Image */}
-          <div className="block w-12 sm:w-24 md:w-32 lg:w-48 xl:w-56 shrink-0 relative aspect-[3/4] mix-blend-multiply opacity-70 pointer-events-none self-start -translate-y-3 sm:-translate-y-6 lg:-translate-y-10">
+          <div className="block w-12 sm:w-24 md:w-32 lg:w-48 xl:w-56 shrink-0 relative aspect-[3/4] mix-blend-multiply opacity-70 pointer-events-none md:pointer-events-auto cursor-pointer self-start -translate-y-3 sm:-translate-y-6 lg:-translate-y-10 group">
             <Image 
               src="/images/unisex_model_male_new.png" 
               alt="Model Left" 
               fill 
-              className="object-cover object-top grayscale"
+              className="object-cover object-top"
             />
           </div>
 
@@ -27,13 +27,13 @@ export default function Statement() {
                  <TypingAnimation 
                    as="span"
                    text="Some people are seen." 
-                   className="block mb-2 md:mb-4 text-brand-black drop-shadow-none text-[15px] sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl leading-normal sm:leading-loose"
+                   className="block mb-2 md:mb-4 text-brand-black drop-shadow-none text-[13px] sm:text-base md:text-2xl lg:text-3xl xl:text-4xl leading-normal sm:leading-loose"
                    duration={100}
                  />
                  <TypingAnimation 
                    as="span"
                    text="Others are remembered." 
-                   className="block text-brand-taupe drop-shadow-none text-[15px] sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl leading-normal sm:leading-loose"
+                   className="block text-brand-taupe drop-shadow-none text-[13px] sm:text-base md:text-2xl lg:text-3xl xl:text-4xl leading-normal sm:leading-loose"
                    duration={100}
                  />
                </h2>
@@ -43,12 +43,12 @@ export default function Statement() {
           </div>
 
           {/* Right Image */}
-          <div className="block w-12 sm:w-24 md:w-32 lg:w-48 xl:w-56 shrink-0 relative aspect-[3/4] mix-blend-multiply opacity-70 pointer-events-none self-end translate-y-3 sm:translate-y-6 lg:translate-y-10">
+          <div className="block w-12 sm:w-24 md:w-32 lg:w-48 xl:w-56 shrink-0 relative aspect-[3/4] mix-blend-multiply opacity-70 pointer-events-none md:pointer-events-auto cursor-pointer self-end translate-y-3 sm:translate-y-6 lg:translate-y-10 group">
             <Image 
               src="/images/unisex_model_female_new.png" 
               alt="Model Right" 
               fill 
-              className="object-cover object-top grayscale"
+              className="object-cover object-top"
             />
           </div>
 
