@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useRef } from 'react';
 import Image from 'next/image';
 
 const collections = [
@@ -14,12 +17,65 @@ const collections = [
 ];
 
 export default function FeaturedCollections() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const container = e.currentTarget;
+    const scrollLeft = container.scrollLeft;
+    const children = container.children;
+    let closestIndex = 0;
+    let minDistance = Infinity;
+
+    // Get actual computed left padding of the scroll container
+    const containerStyle = window.getComputedStyle(container);
+    const containerPadding = parseFloat(containerStyle.paddingLeft) || 0;
+
+    for (let i = 0; i < children.length; i++) {
+      const child = children[i] as HTMLElement;
+      if (child.tagName !== 'DIV') continue;
+      
+      // Calculate how close the child's snapped start position aligns with current scrollLeft
+      const targetScroll = child.offsetLeft - containerPadding;
+      const distance = Math.abs(targetScroll - scrollLeft);
+      
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestIndex = i;
+      }
+    }
+
+    setActiveIndex(closestIndex);
+  };
+
+  const scrollToSlide = (index: number) => {
+    const container = scrollRef.current;
+    if (container) {
+      const children = container.children;
+      if (children[index]) {
+        const child = children[index] as HTMLElement;
+        const containerStyle = window.getComputedStyle(container);
+        const containerPadding = parseFloat(containerStyle.paddingLeft) || 0;
+        
+        container.scrollTo({
+          left: child.offsetLeft - containerPadding,
+          behavior: 'smooth'
+        });
+        setActiveIndex(index);
+      }
+    }
+  };
+
   return (
-    <section className="py-10 px-6 md:px-12 2xl:px-24 w-full mx-auto">
+    <section className="py-10 px-6 md:px-12 2xl:px-24 w-full mx-auto overflow-hidden">
       <h2 className="text-2xl font-light uppercase tracking-[0.2em] mb-8 text-center text-brand-black">Featured Collections</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div 
+        ref={scrollRef}
+        onScroll={handleScroll}
+        className="relative flex flex-row md:grid md:grid-cols-2 gap-4 md:gap-6 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory scrollbar-none pb-4 md:pb-0 px-6 -mx-6 md:px-0 md:mx-0 scroll-pl-6 md:scroll-pl-0"
+      >
         {collections.map((item, index) => (
-          <div key={index} className="relative h-[400px] overflow-hidden group cursor-pointer">
+          <div key={index} className="relative w-[78vw] md:w-full h-[400px] shrink-0 snap-start overflow-hidden group cursor-pointer">
             <Image 
               src={item.image}
               alt={item.title}
@@ -35,6 +91,20 @@ export default function FeaturedCollections() {
               </button>
             </div>
           </div>
+        ))}
+      </div>
+
+      {/* Slide Indicators for mobile */}
+      <div className="flex justify-center space-x-2.5 mt-6 md:hidden">
+        {collections.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => scrollToSlide(index)}
+            className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+              activeIndex === index ? 'bg-brand-black w-6' : 'bg-brand-taupe/30 w-1.5'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
         ))}
       </div>
     </section>
