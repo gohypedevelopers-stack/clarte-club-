@@ -4,9 +4,9 @@ import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-black text-brand-cream pt-16 pb-8 border-t border-brand-taupe/20">
-      <div className="w-full px-6 md:px-12 2xl:px-24 mx-auto">
-        <div className="grid grid-cols-3 md:grid-cols-12 gap-8 mb-12">
+    <footer className="relative overflow-hidden bg-brand-black text-brand-cream pt-16 pb-12 border-t border-brand-taupe/20">
+      <div className="w-full px-6 md:px-12 2xl:px-24 mx-auto relative z-10">
+        <div className="grid grid-cols-3 md:grid-cols-12 gap-8 mb-8 relative z-10">
           
           <div className="col-span-full md:col-span-3">
             <Link href="/" className="block w-36 md:w-44 -ml-4 -mt-10 -mb-6 hover:opacity-80 transition-opacity">
@@ -18,7 +18,7 @@ export default function Footer() {
                 className="w-full h-auto object-contain pointer-events-none"
               />
             </Link>
-            <p className="text-xs text-brand-taupe leading-relaxed pr-4 relative z-10">
+            <p className="text-xs text-brand-taupe leading-relaxed pr-4">
               Clarte Club is the destination for premium eyewear and future fashion. 
               Elevating your lifestyle through vision.
             </p>
@@ -70,16 +70,24 @@ export default function Footer() {
 
         </div>
         
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-brand-taupe/20">
-          <p className="text-[10px] text-brand-taupe uppercase tracking-widest mb-4 md:mb-0">
+        <div className="flex flex-row justify-between items-center pt-4 border-t border-brand-taupe/20 relative z-10 w-full">
+          <p className="text-[8px] text-brand-taupe uppercase tracking-widest">
             &copy; {new Date().getFullYear()} CLARTE CLUB. ALL RIGHTS RESERVED.
           </p>
-          <div className="flex space-x-4 text-brand-taupe">
+          <div className="flex space-x-4 text-brand-taupe shrink-0">
             <Link href="#" className="hover:text-brand-gold transition-colors"><FaFacebook size={16} /></Link>
             <Link href="#" className="hover:text-brand-gold transition-colors"><FaInstagram size={16} /></Link>
             <Link href="#" className="hover:text-brand-gold transition-colors"><FaYoutube size={16} /></Link>
           </div>
         </div>
+
+      </div>
+
+      {/* Faded Background Text Watermark (strictly behind the bottom copyright row, centered with slight shift to avoid copyright overlap) */}
+      <div className="absolute bottom-4 left-0 right-0 text-center pointer-events-none z-0 select-none overflow-hidden leading-none">
+        <span className="block text-[6vw] md:text-[5vw] font-bold uppercase tracking-[0.45em] text-transparent bg-clip-text bg-gradient-to-b from-brand-cream/15 to-transparent translate-x-[3.5vw]">
+          CLARTÉ CLUB
+        </span>
       </div>
     </footer>
   );
