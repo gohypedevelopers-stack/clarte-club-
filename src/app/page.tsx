@@ -27,13 +27,13 @@ export default function Home() {
     <main className="min-h-screen bg-brand-cream">
       <Header />
       <Hero />
-      <Statement />
       <ProductGrid title="Latest Drop" products={latestProducts} />
       <FeaturedCollections />
       <ProductGrid title="Worn By You" products={wornByYouProducts} />
       <TheClub />
       <AsSeenOn />
-      <Join />
+      <Statement />
+      {/* <Join /> */}
       <Footer />
     </main>
   );
