@@ -9,7 +9,7 @@ export default function Statement() {
         <div className="flex flex-row items-center justify-between w-full gap-2 md:gap-8 lg:gap-16">
           
           {/* Left Image */}
-          <div className="block w-12 sm:w-24 md:w-32 lg:w-48 xl:w-56 shrink-0 relative aspect-[3/4] mix-blend-multiply opacity-70 pointer-events-none self-start mt-4 sm:mt-0 lg:mt-8">
+          <div className="block w-12 sm:w-24 md:w-32 lg:w-48 xl:w-56 shrink-0 relative aspect-[3/4] mix-blend-multiply opacity-70 pointer-events-none self-start -translate-y-3 sm:-translate-y-6 lg:-translate-y-10">
             <Image 
               src="/images/unisex_model_male_new.png" 
               alt="Model Left" 
@@ -43,7 +43,7 @@ export default function Statement() {
           </div>
 
           {/* Right Image */}
-          <div className="block w-12 sm:w-24 md:w-32 lg:w-48 xl:w-56 shrink-0 relative aspect-[3/4] mix-blend-multiply opacity-70 pointer-events-none self-end mb-4 sm:mb-0 lg:mb-8">
+          <div className="block w-12 sm:w-24 md:w-32 lg:w-48 xl:w-56 shrink-0 relative aspect-[3/4] mix-blend-multiply opacity-70 pointer-events-none self-end translate-y-3 sm:translate-y-6 lg:translate-y-10">
             <Image 
               src="/images/unisex_model_female_new.png" 
               alt="Model Right" 
