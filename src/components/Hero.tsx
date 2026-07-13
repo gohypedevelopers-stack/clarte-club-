@@ -4,8 +4,8 @@ export default function Hero() {
   return (
     <section className="relative w-full h-screen flex items-end justify-center pb-32 overflow-hidden">
       <Image 
-        src="/images/hero_bg.png" 
-        alt="Clarte Club model wearing sunglasses" 
+        src="/images/hero_bg_group.png" 
+        alt="Clarte Club models walking down street at night" 
         fill 
         className="object-cover object-center"
         priority
